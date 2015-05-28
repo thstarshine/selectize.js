@@ -660,7 +660,7 @@
 				}
 			});
 	
-			$document.on('mousewheel DOMMouseScroll', '.' + dropdownContentClass, function(e) {
+			$document.on('mousewheel DOMMouseScroll', '.' + settings.dropdownContentClass, function(e) {
 				/* by http://stackoverflow.com/a/20520619/3000586 */
 			    var d = e.originalEvent.wheelDelta || -e.originalEvent.detail,
 			        dir = d > 0 ? 'up' : 'down',
