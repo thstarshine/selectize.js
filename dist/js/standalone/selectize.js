@@ -1269,6 +1269,14 @@
 				}
 			});
 	
+			$document.on('mousewheel DOMMouseScroll', '.' + dropdownContentClass, function(e) {
+				/* by http://stackoverflow.com/a/20520619/3000586 */
+			    var d = e.originalEvent.wheelDelta || -e.originalEvent.detail,
+			        dir = d > 0 ? 'up' : 'down',
+			        stop = (dir == 'up' && this.scrollTop == 0) || (dir == 'down' && this.scrollTop == this.scrollHeight-this.offsetHeight);
+			    stop && e.preventDefault();
+			});
+	
 			$window.on(['scroll' + eventNS, 'resize' + eventNS].join(' '), function() {
 				if (self.isOpen) {
 					self.positionDropdown.apply(self, arguments);
